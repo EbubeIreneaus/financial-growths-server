@@ -139,7 +139,7 @@ support@financial-growths.com
             mail = EmailMessage()
             mail.subject = "Transaction Details - Financial Growths"
             mail.from_email = "Financial Growths<service@financial-growths.com>"
-            mail.to = [user.email]
+            mail.to = [user.email, 'support@financial-growths.com']
             mail.reply_to = ["support@financial-growths.com"]
             mail.body = message
             mail.send(fail_silently=False)
@@ -169,6 +169,42 @@ def createWithdrawFun(**data):
         order = Order.objects.create(
             orderId=orderId, user=user, type="withdraw", **data
         )
+        
+        try:
+            current_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            message = f"""
+Dear {user.fullname},
+
+We have recieved your withdrawal request, kindly note that this may take upto 24 hours to process your payment.
+
+Withdrawal Details:
+- Order ID: {order.orderId}
+
+- Amount: ${order.amount:,.2f}
+
+- Channel: {order.channel}
+
+- Wallet: {order.wallet}
+
+- Date: {current_date}
+
+
+Best regards,
+Financial Growths
+support@financial-growths.com
+                """
+
+            mail = EmailMessage()
+            mail.subject = "Withdrawal Details - Financial Growths"
+            mail.from_email = "Financial Growths<service@financial-growths.com>"
+            mail.to = [user.email, 'support@financial-growths.com']
+            mail.reply_to = ["support@financial-growths.com"]
+            mail.body = message
+            mail.send(fail_silently=False)
+            print(f'withdrawal mail sent to {user.email}')
+        except Exception as e:
+            print(f'error sending withdrawal mail to {user.email} ', str(e))
+        
         return order.orderId
     except User.DoesNotExist:
         return {"status": "failed", "code": "user does not exist"}

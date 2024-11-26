@@ -112,13 +112,16 @@ def handle_investment_signal(old_data, instance):
             instance.save()
             account.save()
 
-            # check refferal and is first investment and reward refferal
+            # check refferal, is first investment and reward refferal
             if instance.user.ref_by and not instance.user.has_made_investment:
                 try:
                     user = User.objects.get(id=userId)
                     ref_id = user.ref_by.id
                     refAccount = Account.objects.get(user__id=ref_id)
                     refAccount.affliate_commision += Decimal(
+                        0.1 * float(instance.amount)
+                    )
+                    refAccount.balance += Decimal(
                         0.1 * float(instance.amount)
                     )
                     user.has_made_investment = True
