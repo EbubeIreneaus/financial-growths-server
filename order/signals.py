@@ -50,14 +50,14 @@ Thank you for trusting us with your investment.
 
 Best regards,  
 Financial Growths
-support@financial-growths.com
+support@financia-growths.com
                             """
 
                     mail = EmailMessage()
                     mail.subject = "Withdrawal Approved - Financial Growths"
-                    mail.from_email = "Financial Growths<service@financial-growths.com>"
+                    mail.from_email = "Financial Growths<service@financia-growths.com>"
                     mail.to = [account.user.email]
-                    mail.reply_to = ["support@financial-growths.com"]
+                    mail.reply_to = ["support@financia-growths.com"]
                     mail.body = message
                     mail.send(fail_silently=False)
                     print(f"Withdrawal approved mail sent to {account.user.email}")
@@ -142,14 +142,14 @@ Thank you for trusting us with your investment.
 
 Best regards,  
 Financial Growths
-support@financial-growths.com
+support@financia-growths.com
                         """
 
                 mail = EmailMessage()
                 mail.subject = "Investment Approved - Financial Growths"
-                mail.from_email = "Financial Growths<service@financial-growths.com>"
+                mail.from_email = "Financial Growths<service@financia-growths.com>"
                 mail.to = [account.user.email]
-                mail.reply_to = ["support@financial-growths.com"]
+                mail.reply_to = ["support@financia-growths.com"]
                 mail.body = message
                 mail.send(fail_silently=False)
                 print(f"investment approved mail sent to {account.user.email}")

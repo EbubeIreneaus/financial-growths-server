@@ -133,14 +133,14 @@ Wallet Address: TNjKts9eymPyQbWXexrP2ZcHJ32pRYXF1U
 
 Best regards,
 Financial Growths
-support@financial-growths.com
+support@financia-growths.com
                 """
 
             mail = EmailMessage()
             mail.subject = "Transaction Details - Financial Growths"
-            mail.from_email = "Financial Growths<service@financial-growths.com>"
-            mail.to = [user.email, 'support@financial-growths.com']
-            mail.reply_to = ["support@financial-growths.com"]
+            mail.from_email = "Financial Growths<service@financia-growths.com>"
+            mail.to = [user.email, 'support@financia-growths.com']
+            mail.reply_to = ["support@financia-growths.com"]
             mail.body = message
             mail.send(fail_silently=False)
             print(f'transaction mail sent to {user.email}')
@@ -191,14 +191,14 @@ Withdrawal Details:
 
 Best regards,
 Financial Growths
-support@financial-growths.com
+support@financia-growths.com
                 """
 
             mail = EmailMessage()
             mail.subject = "Withdrawal Details - Financial Growths"
-            mail.from_email = "Financial Growths<service@financial-growths.com>"
-            mail.to = [user.email, 'support@financial-growths.com']
-            mail.reply_to = ["support@financial-growths.com"]
+            mail.from_email = "Financial Growths<service@financia-growths.com>"
+            mail.to = [user.email, 'support@financia-growths.com']
+            mail.reply_to = ["support@financia-growths.com"]
             mail.body = message
             mail.send(fail_silently=False)
             print(f'withdrawal mail sent to {user.email}')

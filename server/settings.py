@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".financial-growths.com", "127.0.0.1"]
+ALLOWED_HOSTS = [".financia-growths.com", "127.0.0.1"]
 
 
 # Application definition
@@ -153,8 +153,8 @@ AUTH_USER_MODEL = "authentication.User"
 
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = "mail.financial-growths.com"
-EMAIL_HOST_USER = "service@financial-growths.com"
+EMAIL_HOST = "mail.financia-growths.com"
+EMAIL_HOST_USER = "service@financia-growths.com"
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')
 EMAIL_USE_TLS = True  # Use TLS for port 587
 EMAIL_USE_SSL = False

@@ -24,7 +24,7 @@ def send_otp_code(id, label: str):
 
         mail = EmailMessage()
         mail.to = [email]
-        mail.from_email = "Financial Growths<service@financial-growths.com>"
+        mail.from_email = "Financial Growths<service@financia-growths.com>"
         mail.subject = label
         mail.body = f"""
 Dear {user.fullname}, \n
@@ -33,7 +33,7 @@ This code is valid for the next 24 hours. \n
 For your security, do not share this code with anyone. If you didn’t request this code, please contact our support team immediately.
 Thank you, \n
 Financial Growths \n
-support@financial-growths.com
+support@financia-growths.com
         """
         mail.send()
         print("mail success")
